@@ -172,23 +172,37 @@ p{margin:0}
   padding:0 .04em;border-radius:3px;color:inherit}
 .accent-text{color:var(--gold-deep)}
 
-/* ============ Botones ============ */
+/* ============ Botones — estilo "Liquid Glass" (iOS 26): pill translúcido ============ */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;
   font-weight:700;font-size:1.02rem;padding:.92em 1.5em;border-radius:999px;
-  border:2px solid transparent;transition:transform .18s ease,box-shadow .18s ease,background .18s ease;
-  white-space:nowrap;min-height:52px}
+  border:1px solid rgba(255,255,255,.5);
+  -webkit-backdrop-filter:blur(16px) saturate(180%);backdrop-filter:blur(16px) saturate(180%);
+  transition:transform .18s ease,box-shadow .18s ease,background .18s ease;
+  white-space:nowrap;min-height:52px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.6), 0 8px 22px -12px rgba(13,17,23,.4)}
 .btn svg{width:20px;height:20px;flex:none}
-.btn-primary{background:var(--gold);color:var(--ink);box-shadow:var(--gold-cta-shadow)}
-.btn-primary:hover{background:var(--gold-bright);transform:translateY(-2px);
-  box-shadow:0 16px 30px -12px rgba(221,179,8,.7)}
-.btn-wa{background:var(--wa);color:#04371f;box-shadow:0 10px 24px -10px rgba(37,211,102,.75)}
-.btn-wa:hover{background:#1fbe5b;transform:translateY(-2px)}
-.btn-outline{background:#fff;color:var(--ink);border-color:var(--line-strong)}
-.btn-outline:hover{border-color:var(--gold);color:var(--gold-deep);transform:translateY(-2px)}
-.btn-ghost{background:var(--gold-soft);color:var(--gold-deep)}
-.btn-ghost:hover{background:#f6e8b8;transform:translateY(-2px)}
+.btn-primary{background:rgba(240,196,32,.62);color:var(--ink);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.78), 0 12px 28px -12px rgba(221,179,8,.6)}
+.btn-primary:hover{background:rgba(240,196,32,.86);transform:translateY(-2px)}
+.btn-wa{background:rgba(37,211,102,.58);color:#04371f;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.62), 0 12px 28px -12px rgba(37,211,102,.55)}
+.btn-wa:hover{background:rgba(37,211,102,.84);transform:translateY(-2px)}
+.btn-outline{background:rgba(255,255,255,.42);color:var(--ink);border-color:rgba(13,17,23,.16)}
+.btn-outline:hover{background:rgba(255,255,255,.72);border-color:var(--gold);color:var(--gold-deep);transform:translateY(-2px)}
+.btn-ghost{background:rgba(240,196,32,.22);color:var(--gold-deep);border-color:rgba(221,179,8,.32)}
+.btn-ghost:hover{background:rgba(240,196,32,.38);transform:translateY(-2px)}
 .btn-block{width:100%}
 .btn-lg{font-size:1.1rem;padding:1.05em 1.8em;min-height:58px}
+/* Fallback: si no hay soporte de vidrio, colores sólidos para mantener visibilidad/contraste */
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .btn-primary{background:var(--gold)}.btn-wa{background:var(--wa)}
+  .btn-outline{background:#fff}.btn-ghost{background:var(--gold-soft)}
+}
+@media (prefers-reduced-transparency:reduce){
+  .btn{-webkit-backdrop-filter:none;backdrop-filter:none}
+  .btn-primary{background:var(--gold)}.btn-wa{background:var(--wa)}
+  .btn-outline{background:#fff}.btn-ghost{background:var(--gold-soft)}
+}
 
 /* ============ Header ============ */
 .site-header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.85);
@@ -240,8 +254,6 @@ section[id]{scroll-margin-top:88px}
 .hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold-soft);
   color:#6b5306;font-weight:700;font-size:.86rem;padding:.45rem .9rem;border-radius:999px;
   margin-bottom:1.1rem;border:1px solid var(--gold-line)}
-.hero-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--ok);
-  box-shadow:0 0 0 0 rgba(31,157,87,.6);animation:pulse 2s infinite}
 .hero-cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.7rem}
 .trust-inline{display:flex;flex-wrap:wrap;gap:.5rem 1.3rem;margin-top:1.6rem;
   color:var(--ink-soft);font-size:.95rem;font-weight:600}
@@ -440,8 +452,9 @@ section[id]{scroll-margin-top:88px}
 .guarantee-band .shield svg{width:40px;height:40px}
 .guarantee-band h3{color:var(--ink);font-size:clamp(1.3rem,3vw,1.9rem)}
 .guarantee-band p{color:rgba(13,17,23,.74);margin-top:.3rem;max-width:52ch}
-.guarantee-band .g-cta{margin-left:auto;background:#fff;color:var(--ink);box-shadow:0 12px 26px -10px rgba(13,17,23,.28)}
-.guarantee-band .g-cta:hover{background:#fffdf3;color:var(--ink);transform:translateY(-2px)}
+.guarantee-band .g-cta{margin-left:auto;background:rgba(255,255,255,.5);color:var(--ink);
+  border-color:rgba(255,255,255,.75);box-shadow:inset 0 1px 0 rgba(255,255,255,.85), 0 12px 26px -10px rgba(13,17,23,.3)}
+.guarantee-band .g-cta:hover{background:rgba(255,255,255,.78);color:var(--ink);transform:translateY(-2px)}
 
 /* ============ FAQ ============ */
 .faq{max-width:800px;margin-inline:auto;display:grid;gap:.7rem}
@@ -509,8 +522,10 @@ section[id]{scroll-margin-top:88px}
 
 /* ============ Flotantes ============ */
 .wa-float{position:fixed;right:18px;bottom:18px;z-index:70;width:60px;height:60px;border-radius:50%;
-  background:var(--wa);display:flex;align-items:center;justify-content:center;
-  box-shadow:0 12px 26px -8px rgba(37,211,102,.7);transition:transform .2s}
+  background:rgba(37,211,102,.7);border:1px solid rgba(255,255,255,.5);
+  -webkit-backdrop-filter:blur(14px) saturate(180%);backdrop-filter:blur(14px) saturate(180%);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.6), 0 12px 26px -8px rgba(37,211,102,.5);transition:transform .2s}
 .wa-float:hover{transform:scale(1.08)}
 .wa-float svg{width:32px;height:32px;color:#fff}
 .wa-float::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--wa);
@@ -543,10 +558,15 @@ section[id]{scroll-margin-top:88px}
 }
 @media (max-width:640px){
   body{font-size:17px}
+  .section{padding-block:clamp(42px,9vw,66px)}
+  .hero{padding-bottom:clamp(34px,7vw,56px)}
+  .chat-body{min-height:318px}
+  .section-head{margin-bottom:clamp(26px,6vw,38px)}
   .nav-links{display:none}
   .nav-cta{display:none}
   .nav-toggle{display:flex}
-  .mobile-menu{display:block;position:fixed;inset:72px 0 0;z-index:55;background:#fff;
+  .mobile-menu{display:block;position:fixed;inset:72px 0 0;z-index:55;background:rgba(255,255,255,.9);
+    -webkit-backdrop-filter:blur(20px) saturate(180%);backdrop-filter:blur(20px) saturate(180%);
     padding:1.5rem var(--pad);transform:translateY(-8px);opacity:0;pointer-events:none;
     transition:opacity .25s,transform .25s;overflow-y:auto}
   .mobile-menu.open{opacity:1;transform:none;pointer-events:auto}
@@ -562,8 +582,9 @@ section[id]{scroll-margin-top:88px}
   .wa-float{width:54px;height:54px;bottom:76px}
   .wa-float svg{width:28px;height:28px}
   .mobile-cta{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:65;gap:.6rem;
-    padding:.7rem var(--pad) calc(.7rem + env(safe-area-inset-bottom));background:rgba(255,255,255,.94);
-    backdrop-filter:blur(12px);border-top:1px solid var(--line)}
+    padding:.7rem var(--pad) calc(.7rem + env(safe-area-inset-bottom));background:rgba(255,255,255,.7);
+    -webkit-backdrop-filter:blur(20px) saturate(180%);backdrop-filter:blur(20px) saturate(180%);
+    border-top:1px solid rgba(255,255,255,.6);box-shadow:0 -6px 20px -12px rgba(13,17,23,.3)}
   .mobile-cta .btn{flex:1;min-height:50px;padding:.7em 1em;font-size:.95rem}
   body{padding-bottom:76px}
 }
@@ -616,7 +637,7 @@ section[id]{scroll-margin-top:88px}
   </div>
   <div class="wrap hero-grid">
     <div class="hero-copy reveal">
-      <span class="hero-badge"><span class="dot"></span> Responde en menos de 30 segundos, 24/7</span>
+      <span class="hero-badge">Responde en menos de 30 segundos, 24/7</span>
       <h1 id="hero-title">Un agente de IA que <span class="grad-text">vende por ti</span> las 24 horas en Colombia</h1>
       <p class="lede">Diseñamos, entrenamos e implementamos tu agente comercial de IA para que <b>atienda, califique y convierta</b> clientes automáticamente por WhatsApp y todos tus canales.</p>
       <div class="hero-cta">
