@@ -19,12 +19,21 @@ Basada en el contenido de <https://agenciasincemarketing.com/servicios/agente-ia
 - **SEO**: HTML semántico, metas, Open Graph/Twitter, datos estructurados JSON-LD
   (Organization, Service, FAQPage, BreadcrumbList), `sitemap.xml`, `robots.txt`.
 
+## Identidad de marca
+
+Usa la **identidad real de Since**: dorado `#ddb308` (acento), azul-noche `#0d1117` (texto y
+paneles) y crema `#f8f6f2` (secciones), sobre fondo blanco. El **logo oficial** va embebido:
+el isotipo hexagonal dorado en la cabecera y el logo completo (hexágono + "SINCE") en el footer.
+Tipografías: **Bricolage Grotesque** (títulos) + **Hanken Grotesk** (cuerpo).
+
 ## Estructura
 
 ```
-index.html              Landing page (todo incluido)
-assets/img/favicon.svg   Favicon
-assets/img/og-image.png  Imagen para compartir en redes (1200×630)
+index.html               Landing page (todo incluido, logos y fuentes embebidos)
+assets/img/since-mark.png  Isotipo (hexágono dorado)
+assets/img/since-logo.png  Logo completo (hexágono + SINCE)
+assets/img/favicon.svg     Favicon (isotipo)
+assets/img/og-image.png    Imagen para compartir en redes (1200×630)
 robots.txt · sitemap.xml · site.webmanifest
 netlify.toml             Configuración de despliegue en Netlify
 ```
