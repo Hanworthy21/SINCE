@@ -13,7 +13,8 @@ Basada en el contenido de <https://agenciasincemarketing.com/servicios/agente-ia
   privacidad y máxima compatibilidad, incluido **celular**.
 - **CTAs constantes**: header, hero (WhatsApp + formulario), tras cada sección, planes, contacto
   final, botón flotante de WhatsApp y barra fija inferior en móvil.
-- **Prueba social**: muro de logos de clientes + testimonios (marcados como *ejemplo*) + métricas.
+- **Prueba social**: muro de logos de clientes reales + métricas (70+ clientes, 5x ROAS, 8 años).
+  Los testimonios se retiraron a pedido: son reales, pero los clientes prefieren mantener su privacidad.
 - **Multimedia funcional**: chat animado del agente, gráfico de conversión, diagrama de 4 pasos,
   comparativa "sin/con IA", contadores animados y gráfico de crecimiento de leads.
 - **SEO**: HTML semántico, metas, Open Graph/Twitter, datos estructurados JSON-LD
@@ -51,8 +52,9 @@ Es un sitio **estático**. Cualquiera de estas opciones funciona:
 
 ## ✅ Antes de publicar: reemplaza estos placeholders
 
-1. **Testimonios** — Sustituye los 3 testimonios de *ejemplo* (marcados con la etiqueta
-   "Ejemplo") por reales: frase, nombre, empresa y foto. Ideal: agregar un video-testimonio.
+1. **Testimonios** — Se retiraron por privacidad de los clientes. Si más adelante consigues
+   testimonios que se puedan publicar (aunque sean anónimos: "Clínica estética, Bogotá"), avísame
+   y reactivo la sección; la prueba social queda con el muro de logos y las métricas.
 2. **Logos de clientes** — Los chips del muro usan el nombre del cliente. Reemplázalos por los
    logos reales (SVG/PNG) si los tienes.
 3. **Formulario** — Si no usas Netlify, conecta el `<form>` a tu herramienta (Formspree, tu CRM
