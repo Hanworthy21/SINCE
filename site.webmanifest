@@ -1,0 +1,13 @@
+{
+  "name": "Since — Agente de IA de Ventas",
+  "short_name": "Since IA",
+  "description": "Agente de IA que atiende, califica y vende por ti 24/7 en Colombia.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "lang": "es-CO",
+  "icons": [
+    { "src": "assets/img/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
