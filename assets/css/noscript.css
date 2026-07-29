@@ -1,6 +1,0 @@
-/* Respaldo para navegadores con JavaScript desactivado.
-   Se carga solo dentro de <noscript>, nunca CSS embebido en el HTML. */
-.reveal{opacity:1!important;transform:none!important}
-.chat-body{min-height:auto}
-.bar-fill{width:var(--nw,60%)!important}
-.marquee-track{animation:none!important}
